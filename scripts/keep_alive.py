@@ -5,7 +5,7 @@ from qdrant_client import QdrantClient
 # Load secrets from Environment Variables (GitHub will provide these)
 QDRANT_URL = os.environ.get("QDRANT_URL")
 QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")
-COLLECTION_NAME = "docs_kisangptgreen"  # Your actual collection name
+COLLECTION_NAME = "docs_kisangpt"  # Your actual collection name
 
 if not QDRANT_URL or not QDRANT_API_KEY:
     print("❌ Error: Secrets not found!")
