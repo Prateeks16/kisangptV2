@@ -21,7 +21,7 @@ def ping_qdrant():
         
         print(f"✅ Success! Collection '{COLLECTION_NAME}' is active.")
         print(f"   - Status: {info.status}")
-        print(f"   - Vectors: {info.vectors_count}")
+        print(f"   - Vectors: {info.points_count}")
         
     except Exception as e:
         print(f"❌ Heartbeat Failed: {e}")
