@@ -1,0 +1,32 @@
+name: Qdrant Keep-Alive
+
+on:
+  schedule:
+    # Run once a day at 8:00 AM UTC (Adjust as needed)
+    - cron: '0 8 * * *'
+  # Allow manual trigger from GitHub UI (for testing)
+  workflow_dispatch:
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install qdrant-client
+
+      - name: Run Heartbeat Script
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+        run: |
+          python scripts/keep_alive.py

@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlmodel
+# Database drivers (Async)
+aiosqlite 
+# AI & Vector DB
+qdrant-client
+google-generativeai
+sentence-transformers
+# Utilities
+python-dotenv
+pydantic-settings
+httpx
